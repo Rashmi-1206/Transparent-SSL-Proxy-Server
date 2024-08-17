@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web Application</title>
+</head>
+<body>
+    <h1>Welcome to the Vulnerable Web Application</h1>
+    <p>This page is susceptible to Cross-Site Scripting (XSS) attacks.</p>
+    <form action="submit.php" method="POST">
+        <label for="input">Enter your name:</label><br>
+        <input type="text" id="input" name="input"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+

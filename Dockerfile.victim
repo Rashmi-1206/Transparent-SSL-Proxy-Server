@@ -1,0 +1,4 @@
+# Dockerfile for the victim's site
+FROM nginx:latest
+COPY victim.html /var/www/html/victim.html
+

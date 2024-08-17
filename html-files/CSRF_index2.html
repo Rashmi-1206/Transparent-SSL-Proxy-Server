@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration Form</title>
+</head>
+<body>
+  <h2>User Registration Form</h2>
+  <form id="registrationForm" action="profile.html" method="GET">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- Greeting Message -->
+  <div id="greeting" style="display:none;"></div>
+
+<script>
+  document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Get the values of username and email input fields after form submission
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+
+    // Store the username in localStorage
+    localStorage.setItem("username", username);
+    console.log("Username stored in localStorage:", username);
+
+    // Redirect the user to the profile page after form submission
+    window.location.href = "profile.html";
+  });
+</script>
+
+</body>
+</html>
+

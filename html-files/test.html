@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XSS Vulnerable Form</title>
+</head>
+<body>
+  <h2>Enter your name:</h2>
+  <form action="#" method="post">
+    <input type="text" name="name" id="nameInput">
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Greetings:</h2>
+  <div id="greetings"></div>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get user input
+      var userInput = document.getElementById('nameInput').value;
+
+      // Display user input without proper sanitization (vulnerable to XSS)
+      document.getElementById('greetings').innerHTML = 'Hello, ' + userInput + '!';
+
+    });
+
+
+
+
+//<img src="x" onerror="alert('XSS Attack!')">
+
+  </script>
+</body>
+</html>

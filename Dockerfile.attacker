@@ -1,0 +1,3 @@
+# Dockerfile for the attacker's site
+FROM nginx:latest
+COPY attacker.html /var/www/html/attacker.html
